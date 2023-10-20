@@ -1,5 +1,9 @@
 import java.util.Scanner;
-import src.operations.*;
+
+import src.operations.Addition;
+import src.operations.Division;
+import src.operations.Multiplication;
+import src.operations.Soustraction;
 
 public class CalcConsole {
 
@@ -34,23 +38,32 @@ public class CalcConsole {
             System.out.print("Entrez le deuxième nombre : ");
             int num2 = scan.nextInt();
 
+            int resultat = 0;
+
             switch (choix) {
+                
                 case 1:
-                    System.out.println("Résultat de l'addition: " + Addition.calculer(num1, num2));
+                    Addition addition = new Addition(num1, num2);
+                    resultat = addition.calculer();
                     break;
                 case 2:
-                    System.out.println("Résultat de la soustraction: " + Soustraction.calculer(num1, num2));
+                    Soustraction soustraction = new Soustraction(num1, num2);
+                    resultat = soustraction.calculer();
                     break;
                 case 3:
-                    System.out.println("Résultat de la multiplication: " + Multiplication.calculer(num1, num2));
+                    Multiplication multiplication = new Multiplication(num1, num2);
+                    resultat = multiplication.calculer();
                     break;
                 case 4:
-                    System.out.println("Résultat de la division: " + Division.calculer(num1, num2));
+                    Division division = new Division(num1, num2);
+                    resultat = division.calculer();
                     break;
                 default:
                     System.out.println("Choix invalide. Veuillez réessayer.");
                     break;
             }
+            
+            System.out.println("Le résultat est : " + resultat);
         }
         // Fermeture du scanner pour éviter les fuites de mémoire
         scan.close();

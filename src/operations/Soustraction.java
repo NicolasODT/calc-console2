@@ -1,9 +1,15 @@
 package src.operations;
 
 public class Soustraction {
+    private int a;
+    private int b;
 
-    // Méthode pour soustraire deux nombres
-    public static int calculer(int a, int b) {
-        return a - b;
+    public Soustraction(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public int calculer() {
+        return this.a - this.b;
     }
 }

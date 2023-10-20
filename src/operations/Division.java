@@ -1,12 +1,18 @@
 package src.operations;
 
 public class Division {
+    private int a;
+    private int b;
 
-    // Méthode pour diviser deux nombres
-    public static double calculer(double a, double b) {
-        if (b == 0) {
-            throw new IllegalArgumentException("Le diviseur ne peut pas être zéro.");
+    public Division(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public int calculer() {
+        if (this.b == 0) {
+            throw new IllegalArgumentException("0");
         }
-        return a / b;
+        return this.a / this.b;
     }
 }

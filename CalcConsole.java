@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // Importation des classes opérations
-import src.operations.*;
+import src.CalcGest;
 
 /**
  * Classe principale de la console de calculatrice.
@@ -16,6 +16,7 @@ public class CalcConsole {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        CalcGest calcGest = new CalcGest();
 
         // Boucle principale de l'application, s'exécute jusqu'à ce que l'utilisateur
         // choisisse de quitter.
@@ -47,31 +48,9 @@ public class CalcConsole {
             System.out.print("Entrez le deuxième nombre : ");
             int num2 = scan.nextInt();
 
-            int resultat = 0;
+            // Appel de la méthode effectuerOperation de CalcGest pour effectuer l'opération
+            int resultat = calcGest.effectuerOperation(choix, num1, num2);
 
-            // Choix de l'opération à effectuer en fonction de l'entrée de l'utilisateur
-            switch (choix) {
-
-                case 1:
-                    Addition addition = new Addition(num1, num2);
-                    resultat = addition.calculer();
-                    break;
-                case 2:
-                    Soustraction soustraction = new Soustraction(num1, num2);
-                    resultat = soustraction.calculer();
-                    break;
-                case 3:
-                    Multiplication multiplication = new Multiplication(num1, num2);
-                    resultat = multiplication.calculer();
-                    break;
-                case 4:
-                    Division division = new Division(num1, num2);
-                    resultat = division.calculer();
-                    break;
-                default:
-                    System.out.println("Choix invalide. Veuillez réessayer.");
-                    break;
-            }
 
             // Affichage du résultat de l'opération
             System.out.println("Le résultat est : " + resultat);

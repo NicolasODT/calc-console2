@@ -1,15 +1,24 @@
 import java.util.Scanner;
 
-import src.operations.Addition;
-import src.operations.Division;
-import src.operations.Multiplication;
-import src.operations.Soustraction;
+// Importation des classes opérations
+import src.operations.*;
 
+/**
+ * Classe principale de la console de calculatrice.
+ * Permet à l'utilisateur de choisir parmi différentes opérations arithmétiques.
+ */
 public class CalcConsole {
 
+    /**
+     * Point d'entrée principal de l'application.
+     * 
+     * @param args arguments de la ligne de commande (non utilisés).
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        // Boucle principale de l'application, s'exécute jusqu'à ce que l'utilisateur
+        // choisisse de quitter.
         while (true) {
             System.out.println("Choisissez une opération: \n" +
                     "[1] Addition\n" +
@@ -24,9 +33,10 @@ public class CalcConsole {
                 System.out.println("Ce n'est pas un nombre. Veuillez entrer un nombre.");
                 scan.next();
             }
-            // Récupération du choix
+            // Récupération du choix de l'utilisateur
             int choix = scan.nextInt();
 
+            // Si l'utilisateur choisit de quitter l'application
             if (choix == 5) {
                 System.out.println("Au revoir !");
                 break;
@@ -34,14 +44,14 @@ public class CalcConsole {
 
             System.out.print("Entrez le premier nombre : ");
             int num1 = scan.nextInt();
-
             System.out.print("Entrez le deuxième nombre : ");
             int num2 = scan.nextInt();
 
             int resultat = 0;
 
+            // Choix de l'opération à effectuer en fonction de l'entrée de l'utilisateur
             switch (choix) {
-                
+
                 case 1:
                     Addition addition = new Addition(num1, num2);
                     resultat = addition.calculer();
@@ -62,7 +72,8 @@ public class CalcConsole {
                     System.out.println("Choix invalide. Veuillez réessayer.");
                     break;
             }
-            
+
+            // Affichage du résultat de l'opération
             System.out.println("Le résultat est : " + resultat);
         }
         // Fermeture du scanner pour éviter les fuites de mémoire

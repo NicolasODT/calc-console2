@@ -6,13 +6,12 @@ import src.operations.*;
  * Gère les opérations de la calculatrice.
  */
 public class CalcGest {
-
     /**
      * Effectue l'opération choisie en fonction de l'entrée de l'utilisateur.
      *
      * @param choix Le type d'opération à effectuer.
-     * @param num1 Le premier nombre.
-     * @param num2 Le deuxième nombre.
+     * @param num1  Le premier nombre.
+     * @param num2  Le deuxième nombre.
      * @return Le résultat de l'opération choisie.
      */
     public int effectuerOperation(int choix, int num1, int num2) {

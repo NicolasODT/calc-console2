@@ -1,7 +1,5 @@
+package src;
 import java.util.Scanner;
-
-// Importation des classes opérations
-import src.CalcGest;
 
 /**
  * Classe principale de la console de calculatrice.
@@ -9,17 +7,19 @@ import src.CalcGest;
  */
 public class CalcConsole {
 
-    /**
-     * Point d'entrée principal de l'application.
-     * 
-     * @param args arguments de la ligne de commande (non utilisés).
-     */
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        CalcGest calcGest = new CalcGest();
+    // CalcGest est une classe qui gère les opérations de la calculatrice
+    private CalcGest calcGest;
 
-        // Boucle principale de l'application, s'exécute jusqu'à ce que l'utilisateur
-        // choisisse de quitter.
+    // Constructeur de CalcConsole qui prend CalcGest en paramètre pour pouvoir l'utiliser
+    public CalcConsole(CalcGest calcGest) {
+        this.calcGest = calcGest;
+    }
+
+    // Méthode pour démarrer l'interface utilisateur de la console
+    public void demarrer() {
+        Scanner scan = new Scanner(System.in);
+
+        // Boucle principale de l'application
         while (true) {
             System.out.println("Choisissez une opération: \n" +
                     "[1] Addition\n" +
@@ -51,11 +51,10 @@ public class CalcConsole {
             // Appel de la méthode effectuerOperation de CalcGest pour effectuer l'opération
             int resultat = calcGest.effectuerOperation(choix, num1, num2);
 
-
             // Affichage du résultat de l'opération
             System.out.println("Le résultat est : " + resultat);
         }
-        // Fermeture du scanner pour éviter les fuites de mémoire
         scan.close();
     }
 }
+

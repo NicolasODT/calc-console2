@@ -1,4 +1,5 @@
 package src;
+
 import java.util.Scanner;
 
 /**
@@ -10,7 +11,8 @@ public class CalcConsole {
     // CalcGest est une classe qui gère les opérations de la calculatrice
     private CalcGest calcGest;
 
-    // Constructeur de CalcConsole qui prend CalcGest en paramètre pour pouvoir l'utiliser
+    // Constructeur de CalcConsole qui prend CalcGest en paramètre pour pouvoir
+    // l'utiliser
     public CalcConsole(CalcGest calcGest) {
         this.calcGest = calcGest;
     }
@@ -57,4 +59,3 @@ public class CalcConsole {
         scan.close();
     }
 }
-
